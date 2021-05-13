@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "961143215666",
+    "firebase_url": "https://fir-notes-a0777-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "fir-notes-a0777",
+    "storage_bucket": "fir-notes-a0777.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961143215666:android:5a533bccb35a329a48ce2b",
+        "android_client_info": {
+          "package_name": "com.example.snapchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "961143215666-611fqmfkheta3g9im0nesdbgt9d6meds.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxCcH9mDvUuP6ycTcHTyYIMQvvI7F02Ys"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "961143215666-611fqmfkheta3g9im0nesdbgt9d6meds.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "961143215666-68l2pp84evo8og16fui2l5t82vptbbf5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "kris79i0.FirebaseNotes"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961143215666:android:2395a96f8c11993948ce2b",
+        "android_client_info": {
+          "package_name": "com.joneikholm.listview21spring"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "961143215666-611fqmfkheta3g9im0nesdbgt9d6meds.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxCcH9mDvUuP6ycTcHTyYIMQvvI7F02Ys"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "961143215666-611fqmfkheta3g9im0nesdbgt9d6meds.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "961143215666-68l2pp84evo8og16fui2l5t82vptbbf5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "kris79i0.FirebaseNotes"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
