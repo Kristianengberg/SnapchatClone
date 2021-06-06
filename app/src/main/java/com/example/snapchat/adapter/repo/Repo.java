@@ -59,17 +59,20 @@ public class Repo {
         DocumentReference ref = db.collection(finalDb).document();
         Map<String, String> map = new HashMap<>();
         map.put("title", UUID.randomUUID().toString());
-        db.collection(finalDb).add(map);
-        System.out.println("Done inserting " + ref.getId());
+        db.collection(finalDb).add(map).addOnCompleteListener(doc -> {
+            addImage(bitmap, doc.getResult().getId());
+        });
+     /*   System.out.println("Done inserting " + ref.getId());
         addImage(bitmap, map.get("title"));
+
+      */
     }
 
     public void startListener() {
-
         db.collection(finalDb).addSnapshotListener((values, error) -> {
             snaps.clear();
             for (DocumentSnapshot snap : values.getDocuments()) {
-                Object title = snap.get("title");
+                Object title = snap.getId();
                 if (title != null) {
                     snaps.add(new Snap((String) title));
                 }
@@ -108,8 +111,10 @@ Deleting the image in storage was much simpler and just required to refer to it 
  */
     public void deleteImageFromServer(String id) {
         StorageReference stoRef = storage.getReference("snaps/" + id);
-      //  db.collection(finalDb).document(id).delete(); - Snak om dette til eksamen, tror det er det Jon tænkte når han sagde man kunne delete by ID og det er også rigtig nok, det kræver et re-write af hvordan dataen bliver gemt.
-        db.collection(finalDb).addSnapshotListener((values, error) -> {
+        db.collection(finalDb).document(id).delete(); // Snak om dette til eksamen, tror det er det Jon tænkte når han sagde man kunne delete by ID og det er også rigtig nok, det kræver et re-write af hvordan dataen bliver gemt.
+        stoRef.delete();
+        /*
+       db.collection(finalDb).addSnapshotListener((values, error) -> {
             for (DocumentSnapshot snap : values.getDocuments()) {
                 String checkId = snap.getString("title");
                 if (checkId.equals(id)) {
@@ -123,6 +128,8 @@ Deleting the image in storage was much simpler and just required to refer to it 
             }
             activity.update(null);
         });
+*/
+        activity.update(null);
     }
 
     public static Repo r() {
