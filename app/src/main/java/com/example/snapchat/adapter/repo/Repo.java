@@ -108,6 +108,7 @@ Deleting the image in storage was much simpler and just required to refer to it 
  */
     public void deleteImageFromServer(String id) {
         StorageReference stoRef = storage.getReference("snaps/" + id);
+      //  db.collection(finalDb).document(id).delete(); - Snak om dette til eksamen, tror det er det Jon tænkte når han sagde man kunne delete by ID og det er også rigtig nok, det kræver et re-write af hvordan dataen bliver gemt.
         db.collection(finalDb).addSnapshotListener((values, error) -> {
             for (DocumentSnapshot snap : values.getDocuments()) {
                 String checkId = snap.getString("title");
